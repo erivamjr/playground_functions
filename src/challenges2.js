@@ -13,7 +13,7 @@ function techList(tech, name) {
   for (let i = 0; i < techAux.length; i += 1) {
     let listObject = {
       tech: techAux[i],
-      name: name
+      name,
     };
     recebe.push(listObject);
   }
@@ -33,13 +33,12 @@ function generatePhoneNumber(numbers) {
   }
 
   for (let key in numbers) {
-
-    if (numbers[key] < 0 || numbers[key] > 9) {// verificando se tem numbers menor que zero OU maior que 9
+    if (numbers[key] < 0 || numbers[key] > 9) { // verificando se tem numbers menor que zero OU maior que 9
       return 'não é possível gerar um número de telefone com esses valores';
     }
     aux = 0;
 
-    for (let index in numbers) {// verificando se tem mais que 2 numbers repitidos
+    for (let index in numbers) { // verificando se tem mais que 2 numbers repitidos
       if (numbers[key] === numbers[index]) {
         aux += 1;
         if (aux > 2) {
@@ -86,11 +85,9 @@ function hydrate(phrase) {
     aux += qtd[index];
   }
   if (aux < 2) {
-    return aux + ' copo de água';
-  } else {
-    return aux + ' copos de água';
+    return `${aux} copo de água`;
   }
-
+  return `${aux} copos de água`;
 }
 
 module.exports = {

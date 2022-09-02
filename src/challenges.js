@@ -67,63 +67,64 @@ function fizzBuzz(receiveNumber) {
 // eslint-disable-next-line max-lines-per-function
 // eslint-disable-next-line complexity
 function encode(caracter) {
-  let aux = '';
-  for (let i = 0; i < caracter.length; i += 1) {
-    switch (caracter[i]) {
+  let result = '';
+  for (let value of caracter) {
+    switch (value) {
       case 'a':
-        aux += '1';
+        result += '1';
         break;
       case 'e':
-        aux += '2';
+        result += '2';
         break;
       case 'i':
-        aux += '3';
+        result += '3';
         break;
       case 'o':
-        aux += '4';
+        result += '4';
         break;
       case 'u':
-        aux += '5';
+        result += '5';
         break;
       default:
-        aux += caracter[i];
+        result += value;
     }
-  } return (aux);
-}
-function decode(caracterDecode) {
-  let aux = '';
-  for (let i = 0; i < caracterDecode.length; i += 1) {
-    switch (caracterDecode[i]) {
-      case '1':
-        aux += 'a';
-        break;
-      case '2':
-        aux += 'e';
-        break;
-      case '3':
-        aux += 'i';
-        break;
-      case '4':
-        aux += 'o';
-        break;
-      case '5':
-        aux += 'u';
-        break;
-      default:
-        aux += caracterDecode[i];
-    }
-  } return (aux);
-}
+    return result;
+  }
 
-module.exports = {
-  calcArea,
-  catAndMouse,
-  compareTrue,
-  concatName,
-  decode,
-  encode,
-  fizzBuzz,
-  footballPoints,
-  highestCount,
-  splitSentence,
-};
+  function decode(caracterDecode) {
+    let result = '';
+    for (let value of caracter) {
+      switch (value) {
+        case '1':
+          result += 'a';
+          break;
+        case '2':
+          result += 'e';
+          break;
+        case '3':
+          result += 'i';
+          break;
+        case '4':
+          result += 'o';
+          break;
+        case '5':
+          result += 'u';
+          break;
+        default:
+          result += value;
+      }
+      return result;
+    }
+
+    module.exports = {
+      calcArea,
+      catAndMouse,
+      compareTrue,
+      concatName,
+      decode,
+      encode,
+      fizzBuzz,
+      footballPoints,
+      highestCount,
+      splitSentence,
+    };
