@@ -1,40 +1,34 @@
 /* eslint-disable max-lines-per-function */
 // Desafio 1
 function compareTrue(x, y) {
-  // seu código aqui
   return !!(x === true && y === true);
 }
 
 // Desafio 2
 function calcArea(base, height) {
-  // seu código aqui
   return (base * height) / 2;
 }
 
 // Desafio 3
 function splitSentence(stringStart) {
-  // seu código aqui
   return stringStart.split(' ');
 }
 
 // Desafio 4
 function concatName(phrase) {
-  // seu código aqui
   return `${phrase[phrase.length - 1]}, ${phrase[0]}`;
 }
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  // seu código aqui
   return (wins * 3 + ties);
 }
 
 // Desafio 6
 function highestCount(number) {
-  // seu código aqui
   let count = 0;
-  for (let i = 0; i < number.length; i += 1) {
-    if (number[i] === Math.max(...number)) {
+  for (const value of number) {
+    if (value === Math.max(...number)) {
       count += 1;
     }
   }
@@ -43,7 +37,6 @@ function highestCount(number) {
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  // seu código aqui
   if (Math.abs(mouse - cat1) < Math.abs(mouse - cat2)) {
     return ('cat1');
   } if (Math.abs(mouse - cat2) < Math.abs(mouse - cat1)) {
@@ -55,29 +48,25 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-//eslint-disable-next-line complexity
+// eslint-disable-next-line complexity
+function fizzBuzzString(value) {
+  if (value % 3 === 0 && value % 5 === 0) return ('fizzBuzz');
+  if (value % 3 === 0) return ('fizz');
+  if (value % 5 === 0) return ('buzz');
+  return ('bug!');
+}
 function fizzBuzz(receiveNumber) {
-  // seu código aqui
-  let wordArray = [];
-  for (let i = 0; i < receiveNumber.length; i += 1) {
-    if (receiveNumber[i] % 3 === 0 && receiveNumber[i] % 5 === 0) {
-      wordArray.push('fizzBuzz');
-    } else if ((receiveNumber[i]) % 5 === 0) {
-      wordArray.push('buzz');
-    } else if (receiveNumber[i] % 3 === 0) {
-      wordArray.push('fizz');
-    } else if (receiveNumber[i] % 3 !== 0 || receiveNumber[i] % 5 !== 0) {
-      wordArray.push('bug!');
-    }
+  let aux = [];
+  for (let value of receiveNumber) {
+    aux.push(fizzBuzzString(value));
   }
-  return wordArray;
+  return aux;
 }
 
 // Desafio 9
 // eslint-disable-next-line max-lines-per-function
 // eslint-disable-next-line complexity
 function encode(caracter) {
-  // seu código aqui
   let aux = '';
   for (let i = 0; i < caracter.length; i += 1) {
     switch (caracter[i]) {
@@ -102,7 +91,6 @@ function encode(caracter) {
   } return (aux);
 }
 function decode(caracterDecode) {
-  // seu código aqui
   let aux = '';
   for (let i = 0; i < caracterDecode.length; i += 1) {
     switch (caracterDecode[i]) {
