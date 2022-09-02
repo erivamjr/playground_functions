@@ -56,11 +56,11 @@ function fizzBuzzString(value) {
   return ('bug!');
 }
 function fizzBuzz(receiveNumber) {
-  let aux = [];
+  let result = [];
   for (let value of receiveNumber) {
-    aux.push(fizzBuzzString(value));
+    result.push(fizzBuzzString(value));
   }
-  return aux;
+  return result;
 }
 
 // Desafio 9
