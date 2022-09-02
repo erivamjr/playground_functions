@@ -33,14 +33,8 @@ function footballPoints(wins, ties) {
 function highestCount(number) {
   // seu código aqui
   let count = 0;
-  let highest = number[0];
   for (let i = 0; i < number.length; i += 1) {
-    if (number[i] > highest) {
-      highest = number[i];
-    }
-  }
-  for (let i = 0; i < number.length; i += 1) {
-    if (number[i] === highest) {
+    if (number[i] === Math.max(...number)) {
       count += 1;
     }
   }
@@ -61,7 +55,7 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-// eslint-disable-next-line complexity
+//eslint-disable-next-line complexity
 function fizzBuzz(receiveNumber) {
   // seu código aqui
   let wordArray = [];
