@@ -2,11 +2,7 @@
 // Desafio 1
 function compareTrue(x, y) {
   // seu código aqui
-  if (x === true && y === true) {
-    return true;
-  } else {
-    return false;
-  }
+  return !!(x === true && y === true);
 }
 
 // Desafio 2
@@ -18,16 +14,13 @@ function calcArea(base, height) {
 // Desafio 3
 function splitSentence(stringStart) {
   // seu código aqui
-  let resultado = stringStart.split(" ");
-  return resultado;
-
+  return stringStart.split(' ');
 }
 
 // Desafio 4
 function concatName(phrase) {
   // seu código aqui
-  return phrase[phrase.length - 1] + ", " + phrase[0];
-
+  return `${phrase[phrase.length - 1]}, ${phrase[0]}`;
 }
 
 // Desafio 5
@@ -39,20 +32,19 @@ function footballPoints(wins, ties) {
 // Desafio 6
 function highestCount(number) {
   // seu código aqui
-  let aux = number[0];
-  let cont = 0;
+  let count = 0;
+  let highest = number[0];
   for (let i = 0; i < number.length; i += 1) {
-    if (aux < number[i]) {
-      aux = number[i];
+    if (number[i] > highest) {
+      highest = number[i];
     }
   }
-  for (let j = 0; j < number.length; j += 1) {
-    if (aux == number[j]) {
-      cont += 1;
+  for (let i = 0; i < number.length; i += 1) {
+    if (number[i] === highest) {
+      count += 1;
     }
   }
-  return cont;
-
+  return count;
 }
 
 // Desafio 7
@@ -60,12 +52,12 @@ function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
   if (Math.abs(mouse - cat1) < Math.abs(mouse - cat2)) {
     return ('cat1');
-  } else if (Math.abs(mouse - cat2) < Math.abs(mouse - cat1)) {
+  } if (Math.abs(mouse - cat2) < Math.abs(mouse - cat1)) {
     return ('cat2');
-  } else {
-    return ('os gatos trombam e o rato foge');
   }
-  //(7,3,2)
+  return ('os gatos trombam e o rato foge');
+
+  // (7,3,2)
 }
 
 // Desafio 8
@@ -113,9 +105,7 @@ function encode(caracter) {
       default:
         aux += caracter[i];
     }
-
   } return (aux);
-
 }
 function decode(caracterDecode) {
   // seu código aqui
@@ -140,7 +130,6 @@ function decode(caracterDecode) {
       default:
         aux += caracterDecode[i];
     }
-
   } return (aux);
 }
 
